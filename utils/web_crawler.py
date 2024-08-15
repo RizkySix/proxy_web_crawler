@@ -35,8 +35,8 @@ class ProxyCrawler(object):
         firefox_opts.set_preference('network.proxy.type', 1)
         firefox_opts.set_preference('network.proxy.http', host)
         firefox_opts.set_preference('network.proxy.http_port', int(port))
-        # firefox_opts.set_preference('network.proxy.ssl', host)
-        # firefox_opts.set_preference('network.proxy.ssl_port', int(port))
+        firefox_opts.set_preference('network.proxy.ssl', host)
+        firefox_opts.set_preference('network.proxy.ssl_port', int(port))
         firefox_opts.set_preference('general.useragent.override', self.get_agent())
         if self.is_headless:
             firefox_opts.add_argument('--headless')
